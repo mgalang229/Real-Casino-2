@@ -1,0 +1,452 @@
+/*DESIGNS AND STYLE*/
+*{margin: 0;padding: 0;}
+body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-image: url('bgcasino.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header{
+    width: 100%;
+    height: 70px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+header img{
+    cursor: pointer;
+    width: 200px;
+    padding: 10px 10px 10px 300px;
+}
+header h1{
+    float: right;
+    cursor: pointer;
+    color: #373737;
+    border-bottom: 1px solid #373737;
+    margin: 25px 350px 0px 25px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+.home{
+    width: 900px;
+    height: 580px;
+    margin: auto;
+    padding: 40px;
+    border-bottom: 1px solid #FE9200;
+}
+.giantJackpot{width: 500px;float: left;padding-top: 50px;}
+.subHome{
+    margin-top: 70px;
+    float: right;
+    width: 300px;
+    height: 450px;
+    background: black;
+    text-align: center;
+    animation: cog 2s infinite;
+	animation-timing-function: linear;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.subHome:hover{transition: all 2s;animation: float 1s infinite;animation-timing-function: linear;}
+.subHome img{width: 300px;}
+.claim{
+    cursor: pointer;
+    border: none;
+    width: 200px;
+    margin-top: 20px;
+    font-family: Literata;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(#FFFB86, yellow);
+}
+.claim:focus{
+    outline: none;
+}
+.hiddenHome{
+    display: none;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    text-align: center;
+}
+.co{
+    font-size: 3em;
+    font-family: AUGUSTUS;
+    background: -webkit-linear-gradient(yellow, #FE9200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-top: 1px solid #B1B100;
+    border-bottom: 1px solid #B1B100;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    animation: slideInFromBottom 1s;
+}
+.offer{
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+}
+.offer > div{
+    margin: auto;
+    width: 500px;
+    margin: 10px;
+    animation: cog2 1s;
+}
+.offer > div:nth-child(1){
+    margin-top: 100px;
+    transform: rotate(-30deg);
+    animation: slideInFromRight 1s;
+}
+.offer > div:nth-child(2){
+    margin: 20px 80px 0px 80px;
+    animation: slideInFromTop 1s;
+}
+.offer > div:nth-child(3){
+    margin-top: 100px;
+    transform: rotate(30deg);
+    animation: slideInFromLeft 1s;
+}
+.revealBtn1, .revealBtn2, .revealBtn3{
+    display: none;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    font-weight: 300;
+    font-size: 1.15em;
+    color: white;
+    letter-spacing: 3px;
+    bottom: 0;
+    position: fixed;
+    background: linear-gradient(#f5af19, #f12711);
+    font-family: Literata;
+}
+.cardClaim, .cardClaim2, .cardClaim3{
+    display: none;
+    border: none;
+    border-top: 2px solid #f5af19;
+    border-bottom: 2px solid #f5af19;
+    cursor: pointer;
+    height: 50px;
+    font-weight: 300;
+    font-size: 1.15em;
+    color: #f12711;
+    background: none;
+    letter-spacing: 3px;
+    font-family: Literata;
+}
+.cardClaim:focus, .cardClaim2:focus, .cardClaim3:focus{
+    outline: none;
+}
+.cardClaim{
+    margin: 50px auto 10px auto;
+}
+.cardClaim2{
+    margin: 30px auto 10px auto;
+}
+.cardClaim3{
+    margin: 20px auto 10px auto;
+}
+.subOffer1, .subOffer2, .subOffer3{
+    cursor: pointer;
+    background: linear-gradient(yellow, #F3F9A7);
+    width: auto;
+    height: 400px;
+}
+.subOffer1:hover, .subOffer2:hover, .subOffer3:hover{
+    transition: all 0.2s;
+    background: linear-gradient(white,yellow);
+}
+.dollarIMG, .dollarIMG2, .dollarIMG3{
+    width: 170px;
+    padding-top: 70px;
+}
+.offerIMG, .offerIMG2, .offerIMG3{
+    display: none;
+    margin: auto;
+}
+.offerIMG{
+    width: 250px;
+    padding-top: 100px;
+}
+.offerIMG2{
+    width: 180px;
+    padding: 80px 0px 20px 0px;
+}
+.offerIMG3{
+    width: 150px;
+    padding: 80px 0px 20px 0px;
+}
+.modal, .modal2, .modal3{
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden; 
+}
+.modal-content {
+  background: linear-gradient(#FDC830, #F37335);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  animation: slideInFromBottom 0.5s;
+}
+.exclusive{
+    background: -webkit-linear-gradient(#7F00FF, #E100FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1.2px solid #0575E6;
+}
+.modal-content h1{
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    font-family: Literata;
+}
+.form-group:nth-child(2){
+    margin-top: 20px;  
+}
+.form-group h2{
+    color: white;
+    font-family: Montserrat;
+    font-size: 1.4em;
+    padding: 10px;
+}
+.form-group:nth-child(1) input{
+    width: 90%;
+    height: 20px;
+    font-size: 0.8em;
+    font-family: Montserrat;
+    font-weight: 500;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+}
+.form-group:nth-child(2) input{
+    border: none;
+    margin: 1px 0px 0px 60px;
+    float: left;
+}
+.confirmReg{
+    color: white;
+    margin: 0px 50px 0px 0px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+}
+.form-group a{
+    color: white;
+    font-family: Montserrat;
+    font-size: 15px;
+}
+p{
+    color: white;
+    font-family: Montserrat;
+    text-align: justify;
+    font-size: 10px;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+.submitBtn{
+    border: none;
+    font-size: 1em;
+    color: white;
+    background: linear-gradient(#7F00FF, #E100FF);
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: Literata;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* KEYFRAME ANIMATIONS*/
+@keyframes float {
+	50% {
+		transform: translate(0, -5px);
+	}
+}
+@keyframes cog {
+	100%{
+	    -webkit-transform: perspective(900px) rotateY(360deg);
+        transform: perspective(900px) rotateY(360deg );
+	}
+}
+@keyframes cog2 {
+    0%{
+        transform: perspective(300px) scale(0);
+    }
+    25%{
+        transform: perspective(300px) scale(1.2);
+    }
+}
+@keyframes cog3 {
+    0%{
+        transform: perspective(300px) scale(1);
+    }
+    25%{
+        transform: perspective(300px) scale(0);
+    }
+}
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(60%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@media only screen and (max-width: 500px){
+    *{
+        transition: all 1s ease-in-out;
+    }
+    body{
+        height: 1250px;
+    }
+    header{
+        text-align: center;
+        height: 50px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    header img{
+        padding: 10px;
+        width: 150px;
+    }
+    header h1{
+        display: none;
+    }
+    .home{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+    .giantJackpot{
+        width: 70%;
+        float: none;
+        margin: auto 100px;
+        display: block;
+        transform: rotate(10deg);
+    }
+    .subHome{
+        margin: 60px auto;
+        float: none;
+        width: 250px;
+        height: 110%;
+        border-radius: 10px;
+    }
+    .subHome img{
+        width: 250px;
+    }
+    .claim{
+        width: 80%;
+        margin: 20px;
+        font-size: 20px;
+        font-weight: 600px;
+        border-radius: 10px;
+    }
+    .hiddenHome{
+        padding: 0;
+        height: 1400px;
+    }
+    .co{
+        font-size: 2.3em;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        border-top: none;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;   
+    }
+    .offer{
+        display: block;
+        width: auto;
+        height: auto;
+        margin: auto;
+    }
+    .offer > div{
+        margin: auto;
+        margin: 0;
+        width: 100%;
+    }
+    .offer > div:nth-child(1){
+        margin-top: 0;
+        animation: cog2 1s;
+        transform: scale(0.7);
+    }
+    .offer > div:nth-child(2){
+        margin: 0;
+        animation: cog2 1s;
+        transform: scale(0.7);
+    }
+    .offer > div:nth-child(3){
+        margin-top: 0;
+        animation: cog2 1s;
+        transform: scale(0.7);
+    }
+    .subOffer1, .subOffer2, .subOffer3{
+        border-radius: 10px;
+    }
+    .revealBtn1, .revealBtn2, .revealBtn3{
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
